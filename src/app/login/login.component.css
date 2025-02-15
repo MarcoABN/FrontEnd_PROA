@@ -1,0 +1,171 @@
+/* Reset and Base Styles */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Container Styles */
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.login-card {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 600px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Login Content Section */
+.login-content {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-section {
+    margin-bottom: 2rem;
+}
+
+.main-title {
+    color: #01579b;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Form Styles */
+.form-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    width: 100%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-title {
+    color: #01579b;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.form-field {
+    width: 100%;
+}
+
+/* Button Styles */
+.login-button {
+    background: linear-gradient(45deg, #01579b, #0277bd) !important;
+    color: white !important;
+    padding: 0.8rem !important;
+    border-radius: 25px !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+    transition: transform 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+}
+
+.login-button:not([disabled]):hover {
+    transform: translateY(-2px);
+}
+
+.login-button[disabled] {
+    background: linear-gradient(45deg, #90a4ae, #b0bec5) !important;
+}
+
+.forgot-password {
+    color: #0277bd !important;
+    font-size: 0.9rem !important;
+    margin-top: 1rem !important;
+    align-self: center;
+}
+
+/* Image Section */
+.image-section {
+    flex: 1;
+    position: relative;
+    background: url('../../assets/barco.jpg') center/cover no-repeat;
+    min-height: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(1, 87, 155, 0.8), rgba(2, 119, 189, 0.6));
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .login-card {
+        flex-direction: column;
+    }
+    
+    .image-section {
+        display: none;
+    }
+    
+    .login-content {
+        padding: 2rem;
+    }
+    
+    .main-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-container {
+        padding: 1rem;
+    }
+    
+    .login-content {
+        padding: 1.5rem;
+    }
+    
+    .main-title {
+        font-size: 1.2rem;
+    }
+    
+    .glass-effect {
+        padding: 1.5rem;
+    }
+}

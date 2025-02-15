@@ -1,0 +1,26 @@
+<div class="container mt-4 scrollable-content">
+    <h1>Bem-vindo a PROA</h1>
+    <p>Escolha uma das opções abaixo:</p>
+
+<div class="option-container">
+    <div class="option" (click)="listarCliente()">
+        <img src="../../assets/iconuser.png" alt="Clientes">
+        <p>Clientes</p>
+    </div>
+
+    <div class="option" (click)="listarembarcacao()">
+        <img src="../../assets/iconboat.png" alt="Embarcações">
+        <p>Embarcações</p>
+    </div>
+    
+    <div class="option" (click)="emitirAnexos()">
+        <img src="../../assets/iconanexo.png" alt="Anexos">
+        <p>Anexos</p>
+    </div>
+
+    <div hidden class="option" (click)="emitirServicos()">
+        <img src="../../assets/iconservice.png" alt="Serviços">
+        <p>Serviços</p>
+    </div>
+</div>
+</div>

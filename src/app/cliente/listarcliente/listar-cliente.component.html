@@ -1,0 +1,50 @@
+<div class="container mt-4 scrollable-content" style="height: 80vh; overflow-y: auto;">
+<h2 class="text-center">Consultar Cliente</h2>
+
+    <form #clienteForm="ngForm" (ngSubmit)="consultarClientePorCPFCNPJ()">
+        <div class="form-group">
+            <label for="cpf">Cliente (CPF ou CNPJ)</label>
+            <br>
+            <input type="text"
+                   class="form-control"
+                   id="cpf"
+                   [(ngModel)]="cpf"
+                   name="cpf"
+                   mask="000.000.000-00 || 00.000.000/0000-00"
+                   [dropSpecialCharacters]="false"
+                   required
+                   style="width: 300px; display: inline-block; margin-right: 10px;">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary" style="margin-right: 10px;">Pesquisar</button>
+        <button type="button" class="btn btn-secondary" (click)="limparDados(clienteForm)">Limpar</button>
+    </form>
+    <div *ngIf="mensagemErro" class="alert alert-danger">
+        {{ mensagemErro }}
+    </div>
+    
+    <br>
+
+    <button *ngIf="!cliente" (click)="cadastrarCliente()" class="btn btn-info">Cadastrar Novo Cliente</button>
+    <br>
+    
+    <table class="table table-striped" *ngIf="cliente">
+        <thead>
+            <tr>
+                <th>CPF</th>
+                <th>Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{cliente.cpfcnpj}}</td>
+                <td>{{cliente.nome}}</td>
+                <td>
+                    <button (click)="consultarCliente(cliente.id)" class="btn btn-primary" style="margin: 10px;">Visualizar</button>
+                    <button (click)="alterarCliente(cliente.id)" class="btn btn-secondary" style="margin: 10px;">Alterar</button>
+                    <button (click)="excluirCliente(cliente.id)" class="btn btn-danger" style="margin: 10px;">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

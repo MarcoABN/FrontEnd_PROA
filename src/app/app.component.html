@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-navy" *ngIf="isAuthenticated">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="inicio" routerLinkActive="active">PROA</a>
+
+    <button class="navbar-toggler" type="button" (click)="toggleMenu()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div id="navbarNav" class="collapse navbar-collapse" [ngClass]="{'show': !isMenuCollapsed}">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="cliente/listar-cliente" routerLinkActive="active">Clientes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="embarcacao/listarembarcacao" routerLinkActive="active">Embarcações</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="anexos/anexos" routerLinkActive="active">Anexos</a>
+        </li>
+        <li class="nav-item" hidden>
+          <a class="nav-link" routerLink="servico-anexo/servico-anexo" routerLinkActive="active">Serviços</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="empresa/empresa" routerLinkActive="active">Opções</a>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-light" (click)="logout()">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="content-wrapper">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer bg-navy text-white" *ngIf="isAuthenticated">
+  <div class="container text-center">
+    <span class="footer-title">PROA</span>
+    <p class="footer-description">Projeto de apoio a Regularização em Operações Aquaviárias</p>
+  </div>
+</footer>
