@@ -7,7 +7,7 @@ import { Prestador } from '../model/prestador';
   providedIn: 'root'
 })
 export class FrontPrestadorService {
-  private url = 'http://localhost:8080/cprestador/prestador'; 
+  private url = 'http://172.26.12.115:8080/cprestador/prestador'; 
 
   constructor(private httpClient: HttpClient) { }
 
