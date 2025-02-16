@@ -11,9 +11,10 @@ export class FrontClienteService {
 
   //private url = "http://localhost:8080/ccliente/cliente";
 
-  private url = "http://localhost:8080/ccliente/cliente";
-  private url2 = "http://localhost:8080/ccliente/cpfcnpj";
-  private url3 = "http://localhost:8080/ccliente/representantes";
+  //172.26.12.115
+  private url = "http://172.26.12.115:8080/ccliente/cliente";
+  private url2 = "http://172.26.12.115:8080/ccliente/cpfcnpj";
+  private url3 = "http://172.26.12.115:8080/ccliente/representantes";
 
   constructor(private httpClient: HttpClient) { }
 
