@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FrontProcuracaoService {
-  private url = 'http://172.26.12.115:8080/cprocuracao';  
+  private url = 'http://3.214.105.13:8080/cprocuracao';  
 
   constructor(private httpClient: HttpClient) { }
 
